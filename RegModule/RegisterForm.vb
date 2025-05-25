@@ -137,4 +137,65 @@ Public Class RegisterForm
         End If
     End Sub
 
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+
+        If String.IsNullOrWhiteSpace(StnoTxt.Text) AndAlso String.IsNullOrWhiteSpace(NmTxt.Text) Then
+            MessageBox.Show("Please enter either a Student Number or Name to search.", "Missing Input", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Exit Sub
+        End If
+
+        Try
+            con.Open()
+
+            Dim query As String = "SELECT * FROM students WHERE student_no = @stno OR name = @name"
+            Dim cmd As New MySqlCommand(query, con)
+
+            cmd.Parameters.AddWithValue("@stno", StnoTxt.Text)
+            cmd.Parameters.AddWithValue("@name", NmTxt.Text)
+
+            Dim reader As MySqlDataReader = cmd.ExecuteReader()
+
+            If reader.Read() Then
+                ' Student Information
+                StnoTxt.Text = reader("student_no").ToString()
+                NmTxt.Text = reader("name").ToString()
+                DobTxt.Text = reader("dob").ToString()
+                AddTxt.Text = reader("address").ToString()
+                EmTxt.Text = reader("email").ToString()
+                ConTxt.Text = reader("contact").ToString()
+                EmCTxt.Text = reader("emergency_contact").ToString()
+
+                ' Academic Details
+                CrsTxt.Text = reader("course").ToString()
+                YrLvlTxt.Text = reader("year_level").ToString()
+                EnStTxt.Text = reader("enrollment_status").ToString()
+                PrvTxt.Text = reader("previous_school").ToString()
+
+                ' Enrollment Details
+                EnDtPicker.Value = Convert.ToDateTime(reader("enrollment_date"))
+                AYrLTxt.Text = reader("academic_year").ToString()
+                StSTxt.Text = reader("student_status").ToString()
+                PTCmb.SelectedItem = reader("payment_type").ToString()
+
+                ' Subjects
+                Md1Txt.Text = reader("subject1").ToString()
+                Md2Txt.Text = reader("subject2").ToString()
+                Md3Txt.Text = reader("subject3").ToString()
+                Md4Txt.Text = reader("subject4").ToString()
+                Md5Txt.Text = reader("subject5").ToString()
+                Md6Txt.Text = reader("subject6").ToString()
+
+            Else
+                MessageBox.Show("No student record found with the given Student Number or Name.", "Not Found", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            End If
+
+            reader.Close()
+
+        Catch ex As Exception
+            MessageBox.Show("Error: " & ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Finally
+            con.Close()
+        End Try
+
+    End Sub
 End Class

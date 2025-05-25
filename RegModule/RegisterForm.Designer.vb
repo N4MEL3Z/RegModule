@@ -24,6 +24,9 @@ Partial Class RegisterForm
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(RegisterForm))
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.LogOutBtn = New System.Windows.Forms.Button()
+        Me.SortingGradeFrmBtn = New System.Windows.Forms.Button()
+        Me.RegisterFrmBtn = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
@@ -79,9 +82,6 @@ Partial Class RegisterForm
         Me.StSTxt = New System.Windows.Forms.TextBox()
         Me.AYrLTxt = New System.Windows.Forms.TextBox()
         Me.PTCmb = New System.Windows.Forms.ComboBox()
-        Me.SortingGradeFrmBtn = New System.Windows.Forms.Button()
-        Me.RegisterFrmBtn = New System.Windows.Forms.Button()
-        Me.LogOutBtn = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -103,6 +103,40 @@ Partial Class RegisterForm
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(181, 785)
         Me.Panel1.TabIndex = 1
+        '
+        'LogOutBtn
+        '
+        Me.LogOutBtn.BackColor = System.Drawing.Color.Yellow
+        Me.LogOutBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.LogOutBtn.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LogOutBtn.Location = New System.Drawing.Point(12, 735)
+        Me.LogOutBtn.Name = "LogOutBtn"
+        Me.LogOutBtn.Size = New System.Drawing.Size(156, 38)
+        Me.LogOutBtn.TabIndex = 39
+        Me.LogOutBtn.Text = "LogOut"
+        Me.LogOutBtn.UseVisualStyleBackColor = False
+        '
+        'SortingGradeFrmBtn
+        '
+        Me.SortingGradeFrmBtn.BackColor = System.Drawing.Color.DodgerBlue
+        Me.SortingGradeFrmBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.SortingGradeFrmBtn.Location = New System.Drawing.Point(12, 185)
+        Me.SortingGradeFrmBtn.Name = "SortingGradeFrmBtn"
+        Me.SortingGradeFrmBtn.Size = New System.Drawing.Size(156, 38)
+        Me.SortingGradeFrmBtn.TabIndex = 9
+        Me.SortingGradeFrmBtn.Text = "Grades"
+        Me.SortingGradeFrmBtn.UseVisualStyleBackColor = False
+        '
+        'RegisterFrmBtn
+        '
+        Me.RegisterFrmBtn.BackColor = System.Drawing.Color.DodgerBlue
+        Me.RegisterFrmBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.RegisterFrmBtn.Location = New System.Drawing.Point(12, 126)
+        Me.RegisterFrmBtn.Name = "RegisterFrmBtn"
+        Me.RegisterFrmBtn.Size = New System.Drawing.Size(156, 38)
+        Me.RegisterFrmBtn.TabIndex = 8
+        Me.RegisterFrmBtn.Text = "Register"
+        Me.RegisterFrmBtn.UseVisualStyleBackColor = False
         '
         'Label2
         '
@@ -641,40 +675,6 @@ Partial Class RegisterForm
         Me.PTCmb.Name = "PTCmb"
         Me.PTCmb.Size = New System.Drawing.Size(165, 21)
         Me.PTCmb.TabIndex = 38
-        '
-        'SortingGradeFrmBtn
-        '
-        Me.SortingGradeFrmBtn.BackColor = System.Drawing.Color.DodgerBlue
-        Me.SortingGradeFrmBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.SortingGradeFrmBtn.Location = New System.Drawing.Point(12, 185)
-        Me.SortingGradeFrmBtn.Name = "SortingGradeFrmBtn"
-        Me.SortingGradeFrmBtn.Size = New System.Drawing.Size(156, 38)
-        Me.SortingGradeFrmBtn.TabIndex = 9
-        Me.SortingGradeFrmBtn.Text = "Grades"
-        Me.SortingGradeFrmBtn.UseVisualStyleBackColor = False
-        '
-        'RegisterFrmBtn
-        '
-        Me.RegisterFrmBtn.BackColor = System.Drawing.Color.DodgerBlue
-        Me.RegisterFrmBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.RegisterFrmBtn.Location = New System.Drawing.Point(12, 126)
-        Me.RegisterFrmBtn.Name = "RegisterFrmBtn"
-        Me.RegisterFrmBtn.Size = New System.Drawing.Size(156, 38)
-        Me.RegisterFrmBtn.TabIndex = 8
-        Me.RegisterFrmBtn.Text = "Register"
-        Me.RegisterFrmBtn.UseVisualStyleBackColor = False
-        '
-        'LogOutBtn
-        '
-        Me.LogOutBtn.BackColor = System.Drawing.Color.Yellow
-        Me.LogOutBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.LogOutBtn.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LogOutBtn.Location = New System.Drawing.Point(12, 735)
-        Me.LogOutBtn.Name = "LogOutBtn"
-        Me.LogOutBtn.Size = New System.Drawing.Size(156, 38)
-        Me.LogOutBtn.TabIndex = 39
-        Me.LogOutBtn.Text = "LogOut"
-        Me.LogOutBtn.UseVisualStyleBackColor = False
         '
         'RegisterForm
         '
